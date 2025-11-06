@@ -5,7 +5,6 @@ export const router = createRouter({
     routes: [
         {
             path: '',
-            props: { msg: 'Daily Recipe Tool' },
             component: () => import('./pages/Home.vue')
         }
     ]
