@@ -7,9 +7,8 @@
     "Segoe UI Emoji";
   --font-serif: "Merriweather", ui-serif, Georgia, Cambria, "Times New Roman",
     Times, "Noto Serif";
-  --color-brand0: #dbf3e4;
-  --color-brand1: #24884b;
-  --color-brand2: #298c52;
+  --color-brand0: #ffffff;
+  --color-brand1: #000000;
 }
 
 /* Tailwind laden */
