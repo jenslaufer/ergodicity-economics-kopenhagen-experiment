@@ -2,9 +2,9 @@
   <div class="flex flex-col items-center justify-center">
     <div class="max-w-3xl min-w-xl sm:px-6 lg:px-8">
       <h1 class="text-brand1 text-4xl font-bold text-center mt-5 mb-8">EE Economics: The Kopenhagen Experiment</h1>
-      <teach title="Teach Additive Dymamic" v-if="step === 0" />
+      <training title="Train Additive Dymamics" v-if="step === 0" />
       <play-additive v-else-if="step === 1" />
-      <teach title="Teach Multiplicative Dymamic" v-else-if="step === 2" />
+      <training title="Train Multiplicative Dymamics" v-else-if="step === 2" />
       <play-multiplicative v-else-if="step === 3" />
       <results v-else-if="step === 4" />
       <div class="flex justify-center">
@@ -24,7 +24,7 @@
 import { ref } from "vue";
 import PlayAdditive from "./PlayAdditive.vue";
 import PlayMultiplicative from "./PlayMultiplicative.vue";
-import Teach from "./Teach.vue";
+import Training from "./Training.vue";
 import Results from "./Results.vue";
 
 const step = ref(0)
