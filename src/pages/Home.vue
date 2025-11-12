@@ -15,8 +15,7 @@
     </div>
     <app-footer
       component-style="text- text-gray-600 hover:text-gray-800  transition-colors duration-200 font-medium underline"
-      class="fixed bottom-0 left-0 m-3" text="&copy; by Solytics — explore our extensions or get your own built by us."
-      url="https://www.solytics.de/#/chrome_extension" />
+      class="fixed bottom-0 left-0 m-3" text="&copy; by Solytics GmbH" url="https://www.solytics.de/#/" />
   </div>
 </template>
 
@@ -26,8 +25,15 @@ import PlayAdditive from "./PlayAdditive.vue";
 import PlayMultiplicative from "./PlayMultiplicative.vue";
 import Training from "./Training.vue";
 import Results from "./Results.vue";
+import { AppFooter } from "@solytics/vue-footer-widgets";
 
 const step = ref(0)
+
+const outcomeMapping = {
+  "f000-2": 0,
+  "f001-2": 1,
+  "f010-2": 2,
+};
 
 const nextStep = () => {
   step.value += 1;
