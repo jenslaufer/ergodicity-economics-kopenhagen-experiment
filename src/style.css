@@ -19,7 +19,8 @@
   html,
   body {
     @apply font-sans;
-    @apply bg-brand0;
+    @apply bg-brand1;
+    @apply text-brand0;
   }
 }
 

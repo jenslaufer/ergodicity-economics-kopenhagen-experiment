@@ -2,10 +2,11 @@
     <h2 class="text-2xl font-bold text-center">{{ title }}</h2>
 </template>
 <script setup>
-const props = defineProps({
+defineProps({
     title: {
         type: String,
-        required: true,
+        required: true
     }
+
 });
 </script>
