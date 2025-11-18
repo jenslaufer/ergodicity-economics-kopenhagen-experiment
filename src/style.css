@@ -23,27 +23,3 @@
     @apply text-brand0;
   }
 }
-
-@layer components {
-  .recipe h1 {
-    @apply text-3xl font-bold mb-4 mt-20;
-  }
-  .recipe h2 {
-    @apply text-3xl font-bold mb-4 mt-20;
-  }
-  .recipe ul {
-    @apply list-disc text-lg list-inside mb-6;
-  }
-  .recipe ul li {
-    @apply mb-2;
-  }
-  .recipe ol {
-    @apply list-decimal text-lg list-inside mb-3;
-  }
-  .recipe ol li {
-    @apply mb-2;
-  }
-  .recipe p {
-    @apply mb-3 text-lg;
-  }
-}

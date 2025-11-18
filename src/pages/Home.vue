@@ -1,21 +1,15 @@
 <template>
   <div class="flex flex-col items-center justify-center">
     <div class="max-w-xl min-w-xl sm:px-6 lg:px-8">
-      <div v-if="step === 0">
-        <h1 class="text-3xl font-bold text-center mt-5 mb-8">Welcome to the gambling experiment!</h1>
-        <h2 class="text-2xl font-semibold text-center mt-5 mb-8">First you learn which images are best for your wealth
-        </h2>
-      </div>
-      <training title="Train Additive Dymamics" v-if="step === 0" />
-      <play title="Play Multiplicative Dymamics" v-else-if="step === 1" />
-      <training title="Train Multiplicative Dymamics" v-else-if="step === 2" />
-      <play title="Play Multiplicative Dymamics" v-else-if="step === 3" />
+      <instruction v-if="step === 0" title="Welcome to the gambling experiment!" button-text="Press here to start"
+        @submit="nextStep" subtitle="First you learn which images are best for your wealth" body="" />
+      <training title="Train Multiplicative Dymamics" v-if="step === 1" :outcomes="multiplicativeOutcomes"
+        @submit="nextStep" />
+      <play title="Play" v-else-if="step === 2" :outcomes="multiplicativeOutcomes" @submit="nextStep" />
+      <training title="Train" v-else-if="step === 3" :outcomes="additiveOutcomes" @submit="nextStep" />
+      <play title="Play" v-else-if="step === 4" :outcomes="additiveOutcomes" @submit="nextStep" />
       <results v-else-if="step === 4" />
-      <div class="flex justify-center">
-        <button @click="nextStep" v-if="step < 4"
-          class="mt-10 px-6 py-3 bg-red-500 text-brand0 font-semibold rounded hover:bg-red-800 transition-colors duration-200">Press
-          here to start</button>
-      </div>
+
     </div>
     <app-footer
       component-style="text- text-gray-600 hover:text-gray-800  transition-colors duration-200 font-medium underline"
@@ -28,6 +22,7 @@ import { ref } from "vue";
 import Play from "./Play.vue";
 import Training from "./Training.vue";
 import Results from "./Results.vue";
+import Instruction from "./Instruction.vue";
 import { AppFooter } from "@solytics/vue-footer-widgets";
 
 const props = defineProps({
